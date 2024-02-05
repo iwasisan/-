@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Easy to see</title>
+    <meta name="description" content="伝えたい×知りたいを提供する。ホームページ作成サービス">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body id ="page2">
+    <header>
+      <nav id="header_hamburger">
+        <p class="header_icon">
+          <a href="./index.html"><img src="img/index/icon.png"></a>
+        </p>
+        <div id="nav-wrapper" class="nav-wrapper">
+            <div class="hamburger" id="js-hamburger">
+              <span class="hamburger__line hamburger__line--1"></span>
+              <span class="hamburger__line hamburger__line--2"></span>
+              <span class="hamburger__line hamburger__line--3"></span>
+            </div>
+            <nav class="sp-nav">
+              <ul class="hamburger_navi">
+                <li><a href="#">Top</a></li>
+                <li><a href="service">Service</a></li>
+                <li><a href="creation">Creation</a></li>
+                <li><a href="profile">Profile</a></li>
+                <li><a href="contact">Contact</a></li>
+              </ul>
+            </nav>
+            <div class="black-bg" id="js-black-bg"></div>
+        </div>
+      </nav>
+      
+      <ul class="header_navi">
+        <li><a href="#">Top</a></li>
+        <li><a href="service">Service</a></li>
+        <li><a href="creation">Creation</a></li>
+        <li><a href="profile">Profile</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <main class="contact">
+      <hgroup class="form_title">
+        <h1>CONTACT</h1>
+        <p>
+          制作のご依頼やご相談、またこのサイトに関する質問など
+          お気軽にお問い合わせください。
+        </p>
+      </hgroup>
+      <form action="comfirm.php" method="post">
+
+        <div class="form_name form_base">
+          <label>氏名</label>
+          <input id="your_name" name="your_name" type=text placeholder="山田太郎"> 
+          <span class="name_count"></span>
+        </div>
+
+        <div class="form_email form_base">
+          <label>メールアドレス</label>
+          <input name="adress" id="adress" type=email placeholder="メールアドレスを入力してください">
+          <span class="email_count"></span>
+        </div>
+
+        <div class="form_tel form_base">
+          <label>電話番号</label>
+          <input id="tel" name="phone" placeholder="電話番号を入力してください" type=tel pattern="\d{2,4}-?\d{2,4}-?\d{3,4}">
+          <span class="tel_count"></span>
+        </div>
+
+        <div class="form_subject form_base">
+          <label>件名</label>
+          <input id="kenmai" name="kenmai" type=text>
+          <span class="consul_count"></span>
+        </div>
+
+        <div class="form_inquiry form_base">
+          <label>問い合わせ内容</label>
+          <textarea class="area" name="consultation_area"></textarea>
+        </div>
+
+        <div class="form_privacy form_base">
+          <label>個人情報保護の確認</label>
+          <input name="privacy" value="consent" type="checkbox">
+        </div>
+
+        <div class="form_submit">
+          <input class="subm" type="submit" value="送信する">
+        </div>
+      </form>
+
+        <div class="top_button">
+          <h3>
+            <img src="img/index/button.png" alt="">
+          </h3>
+          <p>SCROLL</p>
+        </div>
+    </main>
+
+    <footer>
+      <p>&#169;Easy to see All rights reserved.</p>
+    </footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/sub.js"></script>
+    <script src="./js/sub2.js"></script>
+</html>

@@ -1,0 +1,128 @@
+@use "./../base_css/system" as sys;
+
+
+
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+  position: absolute;
+  right: calc(10% - 70px);
+  top: 7px;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.hamburger__line {
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  right: 0;
+  background-color: #ffffff;
+  transition: all 1s;
+}
+
+.hamburger__line--1 {
+  top: 12px;
+}
+
+.hamburger__line--2 {
+  top: 22px;
+}
+
+.hamburger__line--3 {
+  top: 32px;
+}
+
+/*ハンバーガーがクリックされたら*/
+.open .hamburger__line--1 {
+  transform: rotate(-45deg);
+  top: 11px;
+}
+
+.open .hamburger__line--2 {
+  opacity: 0;
+}
+
+.open .hamburger__line--3 {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+/* 
+sp-nav(ナビ)
+=================================== */
+.sp-nav {
+  position: fixed;
+  right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+  top: 0;
+  width: 60%; /* 出てくるスライドメニューの幅 */
+  height: 100vh;
+  background-color: #ffffff;
+  transition: all 0.5s;
+  z-index: 200;
+  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+}
+
+/*ハンバーガーがクリックされたら右からスライド*/
+.open .sp-nav {
+  right: 0;
+}
+
+
+/* 
+black-bg(ハンバーガーメニュー解除用bg)
+=================================== */
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: #4512ff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/*ハンバーガーメニューが開いたら表示*/
+.open .black-bg {
+  opacity: 0.3;
+  visibility: visible;
+}
+
+.hamburger_navi{
+  margin-top: 100px;
+}
+
+.hamburger_navi li{
+  line-height: 3;
+}
+
+
+@mixin fadein{
+    animation-name: fadeUpAnime;
+    animation-duration:1.2s;
+    animation-fill-mode:forwards;
+    opacity:0;
+  }
+
+  @mixin fadeinanime{
+    @keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+    }
+  }
+}
+

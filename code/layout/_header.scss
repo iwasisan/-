@@ -1,0 +1,35 @@
+@use "./../base_css/system" as sys;
+
+
+#header_hamburger{
+  background-color: sys.$header-color;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_icon{
+  margin: 0 20px 0;
+
+  img{
+    max-width: 210px;
+    transition: all 0.5s;
+  }
+}
+
+.header_navi a{
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Microsoft JhengHei UI";
+  color: sys.$body-color;
+  line-height: 1.8;
+}
+
+.header_navi{
+  position: absolute;
+  left: calc(100% - 130px);
+  line-height: 2;
+}
+
+header{
+  max-height: 53px;
+}

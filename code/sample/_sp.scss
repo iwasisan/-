@@ -1,0 +1,377 @@
+@use "./..//item_css/henka" as hen;
+@use "./../item_css/ugoki" as ugo;
+
+
+$pc: 750px;
+
+$sp:500px;
+
+@media (max-width: ($pc)){
+  header{
+    .header_icon img{
+      max-width: 110px;
+    }
+  }
+  .hamburger{
+    position: absolute;
+    top: -4px;
+  }
+  .hamburger__line--1{
+    top: 10px;
+  }
+  .hamburger__line--2 {
+  top: 20px;
+  }
+  .hamburger__line--3 {
+  top: 30px;
+  }
+}
+
+@media(max-width:($sp)){
+  .header_navi a{
+    display: none;
+  }
+  .hamburger{
+    position: absolute;
+    right: calc(10% - 40px);
+  }
+}
+
+@media (max-width: ($pc)){
+  .top_title{
+    position: relative;
+    left: 23%;
+
+    h1{
+      color: rgb(255, 255, 255);
+      font-size: 40px;
+    }
+    p{
+      color: rgb(255, 255, 255);
+      font-size: 13px;
+    }
+  }
+  .top_text01{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+  }
+  .top_scroll{
+    font-size: 12px;
+  }
+}
+
+@media(max-width:($sp)){
+  .top_title{
+    position: relative;
+    left: 17%;
+  }
+  #top{
+    display: none;
+  }
+}
+
+
+#slickbox{
+  display: none;
+
+  @media(max-width:($sp)){
+    display: block;
+    position: relative;
+    top: 0px;
+    max-height: 530px;
+  }
+}
+
+
+.slick__bg {
+    padding-top: 480px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slick__bg01 {
+    background-image: url(./../img/index/slide1.png);
+}
+.slick__bg02 {
+    background-image: url(./../img/index/slide2.png);
+}
+.slick__bg03 {
+    background-image: url(./../img/index/slide3.png);
+}
+
+#slickbox hgroup{
+  z-index: 2;
+  position: absolute;
+  top: 25%;
+}
+
+#slickbox{
+  .top_text01{
+    transform: translateY(-140px);
+  }
+  .top_scroll{
+    transform: translateY(-60px);
+  }
+  .scroll-down4{
+    position: relative;
+    top: -120px;
+    height: 40px;
+  }
+  .dli-chevron{
+    transform: translateY(-100px);
+  }
+}
+
+
+
+@media (max-width: ($pc)){
+  .service_title{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    transform: translateX(0%);
+
+    h2{
+      font-size: 22px;
+    }
+
+    p{
+      font-size: 12px;
+    }
+    &::after{
+      width:calc(100% - 100px);
+      position:absolute;
+      left:calc(45% - 185px);
+    }
+  }
+  #service{
+    max-width:90%;
+  }
+}
+
+@media(max-width:($sp)){
+  .service_title{
+    &::after{
+      position:absolute;
+      left:calc(55% - 185px);
+    }
+  }
+  .menu_01{
+    column-gap: 10%;
+    img{
+      max-width: 60px;
+      transform: translateX(20px);
+    }
+    dl{
+      max-width: 300px;
+      dt{
+        font-size: 13px;
+      }
+      dd{
+        font-size: 13px;
+      }
+    }
+  }
+  .menu_02{
+    @include hen.service01;
+  }
+  .menu_03{
+    column-gap: 19%;
+    @include hen.service01;
+    img{
+      max-width: 75px;
+    }
+  }
+}
+
+@media (max-width: ($pc)){
+  .creation_title{
+    @include hen.title;
+  }
+}
+
+@media (max-width: ($sp)){
+  .creation_title{
+    &::after{
+      position:absolute;
+      left:calc(48% - 185px);
+    }
+  }
+  #creation nav{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    row-gap: 40px;
+  }
+  .creation_01{
+    animation-name: fadeUpAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+  }
+  @keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+    }
+  }
+
+  .creation_02{
+    @include ugo.fadein;
+    @include ugo.fadeinanime;
+  }
+}
+
+@media (max-width: ($pc)){
+  #works h2{
+    font-size: 22px;
+  }
+
+  .works_modal{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    transform: translateX(-3%);
+  }
+  .works_modal img{
+    max-width: 250px;
+  }
+}
+
+@media (max-width: ($sp)){
+  .works_modal{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    overflow: scroll;
+  }
+  .works_modal img{
+    max-width: 270px;
+  }
+}
+
+@media (max-width: ($pc)){
+  #skill{
+    max-width: 90%;
+    h2{
+      font-size: 22px;
+    }
+  }
+  #skill aside{
+    &::after{
+      width:405px;
+      position:absolute;
+      left:calc(40% - 155px);
+    }
+  }
+  .skill_base {
+    figcaption{
+      font-size: 12px;
+    }
+    img{
+      max-width: 65px;
+      max-height: 70px;
+    }
+  }
+  .skill_03{
+    transform: translateY(5px);
+  }
+  .skill_04{
+    figcaption{
+      transform: translateY(5px);
+    }
+  }
+}
+
+@media (max-width: ($sp)){
+  #skill aside{
+    column-gap: 50px;
+    &::after{
+      width:355px;
+      position:absolute;
+      left:calc(40% - 125px);
+    }
+  }
+  #skill{
+    background-color: rgba(128, 139, 152,0.52);
+
+    h2{
+      color: rgb(255, 255, 255);
+
+      &::after{
+        background-color:rgb(255, 255, 255);
+      }
+    }
+  }
+  .skill_base {
+    figcaption{
+      color: rgb(255, 255, 255);
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: ($pc)){
+  .profile_text{
+    transform: translateX(30px);
+    max-width: 500px;
+    p{
+      font-size: 13px;
+    }
+    img{
+      width: 130px;
+    }
+  }
+  .profile_contact{
+    margin-left: 15%;
+    position: relative;
+    top: -10px;
+
+    .profile_name{
+      h5{
+        font-size: 16px;
+      }
+      p{
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: ($sp)){
+  .profile_text{
+    display: flex;
+    flex-flow: column;
+    max-width: 90%;
+    transform: translateX(10%);
+  }
+  .profile_text2{
+    h3{
+      display: block;
+      text-align: center;
+      transform: translateX(-5px);
+      @include hen.font1;
+      font-size: 17px;
+      
+      rt{
+        font-family: "游ゴシック";
+      }
+    }
+  }
+  .profile_contact{
+    display: flex;
+    flex-flow: column;
+    transform: translateX(-40px);
+    position: relative;
+    top: 0px;
+  }
+  .profile_name{
+    display: none;
+  }
+}
+
+
