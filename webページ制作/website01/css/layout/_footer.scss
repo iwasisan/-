@@ -1,0 +1,82 @@
+@use "../foundation/system" as sys;
+@use "../object/common" as com;
+
+.footer_link_list h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer_link_list ul {
+  line-height: 1.5;
+}
+
+.footer_link nav {
+  display: flex;
+}
+
+.footer_link_list {
+  margin-right: 45px;
+}
+
+.footer_link {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  column-gap: calc(10% + 10px);
+  margin-bottom: 80px;
+}
+
+.footer_con {
+  background-color: rgb(117, 137, 130);
+  display: inline-block;
+  border-radius: 10px;
+
+  a {
+    color: sys.$font_color1;
+    font-weight: 600;
+    padding: 10px 80px;
+    display: inline-block;
+  }
+}
+
+.footer_con_oya {
+  text-align: right;
+  transform: translate(-40px, -40px);
+  margin-bottom: 30px;
+}
+
+.footer_copy {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+//フッターレスポンシブ
+
+@media screen and (max-width: 961px) {
+  .footer_link {
+    flex-flow: column;
+    gap: 30px;
+    transform: translateX(10%);
+  }
+  .footer_link_list {
+    h4 {
+      a {
+        font-size: 1.1rem;
+      }
+    }
+    li {
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .footer_link nav:nth-child(2) {
+    display: flex;
+    flex-flow: column;
+    row-gap: 30px;
+    transform: translateX(-40%);
+  }
+}
